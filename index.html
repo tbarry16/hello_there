@@ -187,6 +187,164 @@
                 color: #333;
             }
         }
+
+        /* Work Experience Section */
+        .experience-section {
+            padding: 40px;
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4aa, #00a8ff);
+            border-radius: 1px;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .company {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #00d4aa;
+            margin-bottom: 20px;
+        }
+
+        .role-progression {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .role {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .role:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .role.current-role {
+            border-left-color: #00d4aa;
+            background: rgba(0, 212, 170, 0.1);
+        }
+
+        .role:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .role.current-role:hover {
+            background: rgba(0, 212, 170, 0.15);
+        }
+
+        .role-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .role-period {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            font-weight: 400;
+        }
+
+        .current-role .role-period {
+            color: #00d4aa;
+        }
+
+        .role-achievements {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .role-achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .role-achievements li:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00d4aa;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive adjustments for experience section */
+        @media (max-width: 600px) {
+            .experience-section {
+                padding: 30px 20px;
+            }
+
+            .role-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .company {
+                font-size: 1.2rem;
+            }
+
+            .role-title {
+                font-size: 1rem;
+            }
+
+            .role-achievements li {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -225,6 +383,46 @@
                 </a>
             </div>
         </header>
+        
+        <!-- Work Experience Section -->
+        <section class="experience-section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-role">
+                        <h3 class="company">AppFolio</h3>
+                        <div class="role-progression">
+                            <div class="role current-role">
+                                <div class="role-header">
+                                    <span class="role-title">Senior Software Engineer</span>
+                                    <span class="role-period">April 2025 - Present</span>
+                                </div>
+                                <ul class="role-achievements">
+                                    <li>Architected and implemented comprehensive authorization and access control systems across 20+ APIs, enhancing security posture by 50% and establishing enterprise-grade permission frameworks</li>
+                                    <li>Executed comprehensive data remediation initiative by developing custom migration scripts to resolve data integrity issues, enabling implementation of enhanced validation strategies and unblocking critical downstream projects</li>
+                                    <li>Led cross-functional team of 7 software engineers and 1 QA engineer through large-scale refactoring of customer-facing features, systematically addressing technical debt that was constraining product development velocity</li>
+                                    <li>Collaborated with Product and UX leadership to establish long-term data architecture strategy, optimizing roadmap prioritization to maximize value delivery while maintaining architectural integrity aligned with 3-year product vision</li>
+                                    <li>Presented strategic technical initiatives to C-suite executives, ensuring organizational alignment and coordinating cross-team engineering efforts to prevent redundancy and maintain adherence to enterprise architecture standards</li>
+                                </ul>
+                            </div>
+            <div class="role">
+                                <div class="role-header">
+                                    <span class="role-title">Software Engineer II</span>
+                                    <span class="role-period">April 2023 - March 2025</span>
+                                </div>
+                            </div>
+                            <div class="role">
+                                <div class="role-header">
+                                    <span class="role-title">Software Engineer I</span>
+                                    <span class="role-period">August 2022 - March 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Additional sections will be added here -->
     </div>
